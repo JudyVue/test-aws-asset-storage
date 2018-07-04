@@ -63,6 +63,6 @@ describe('TESTING ROUTES AT /api/sounds', () => {
         console.log(err);
         expect(err).toEqual('foo');
       }
-    })
+    });
   });
 });

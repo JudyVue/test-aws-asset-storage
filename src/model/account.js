@@ -4,6 +4,8 @@ import crypto from 'crypto'; // used to generate random data
 import jsonWebToken from 'jsonwebtoken';
 import HttpErrors from 'http-errors';
 
+require('dotenv').config();
+
 
 // a common styling convention is to capitalize constant strings and numbers
 const HASH_ROUNDS = 1;

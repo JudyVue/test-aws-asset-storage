@@ -43,6 +43,7 @@ soundRouter.post('/api/sounds', bearerAuthMiddleware, multerUpload.any(), (reque
 });
 
 soundRouter.get('/api/sounds/:id?', bearerAuthMiddleware, (request, response, next) => {
+  if (!request.account) return next(new HttpErrors(401), 'SOUND ROUTER GET: invalid request');
   if (!request.params.id) return next(new HttpErrors(400, 'SOUND ROUTER GET: no id provided'));
 
   // findById is NOT a method that works in a pre/post hook, so choose queries wisely if you intend to use those hooks in project week
