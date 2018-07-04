@@ -8,7 +8,7 @@ const createAccountMockPromise = () => {
     email: faker.internet.email(),
     password: faker.lorem.words(5),
   };
-
+  // 
   return Account.create(originalRequest.username, originalRequest.email, originalRequest.password)
     .then((account) => {
       mockData.originalRequest = originalRequest;
